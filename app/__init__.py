@@ -13,6 +13,6 @@ migrate = Migrate(app, db)
 from app import routes, models
 
 print("Hello")
-
+print("zdivyn")
 
 
