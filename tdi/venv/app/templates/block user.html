@@ -1,0 +1,8 @@
+{%extends "base.html"%}
+{%block content%}
+{% if user.1 %}
+<body>Welcome back, {{user.1}}</body>
+   {% else %}
+<body>Welcome back, unknown user</body>
+{% endif %}
+{%endblock%}
