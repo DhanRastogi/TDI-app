@@ -6,6 +6,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from datetime import date, datetime
 from werkzeug.urls import url_parse
 
+print('hello')
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
