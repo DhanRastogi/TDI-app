@@ -191,3 +191,38 @@ def maintenance_success():
 def manage_requests():
          print(Requests.query.filter_by(ashoka_id=current_user.ashoka_id).all())
          return
+
+@app.route('/goodboii')
+def goodboii():
+    return render_template('TDILogin.html')
+
+@app.route('/page0')
+def page0():
+    return render_template('page0.html')
+
+@app.route('/page01', methods=['GET', 'POST'])
+def page01():
+  
+    form=LogInForm()
+    
+    if form.validate_on_submit():
+        user = User.query.filter_by(ashoka_email=form.login_mail.data).first()
+        if user is None:
+            flash('Invalid username')
+            return redirect('/page01')
+        
+        login_user(user, remember=form.remember_me.data)
+        return redirect('/home')
+    return render_template('page01.html', title='Sign In', form=form)
+
+@app.route('/page1')
+def page1():
+    return render_template('page1.html')
+
+@app.route('/page2')
+def page2():
+    return render_template('page2.html')
+
+@app.route('/page3')
+def page3():
+    return render_template('page3.html')
