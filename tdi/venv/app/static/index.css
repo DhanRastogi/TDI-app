@@ -38,6 +38,22 @@
     height: 37px;
   }
   .ashoka-mail-id {
+    position:absolute;
+    top: 645px;
+    left: 10px;
+    height: 0px;
+    width: 0px;
+  }
+  .ashoka-mail-id input[type="text"] {
+    color: black;
+    background-color: #d9d9d9;
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+  }
+  /*.ashoka-mail-id {
     position: absolute;
     top: 645px;
     left: 10px;
@@ -45,7 +61,7 @@
     color: rgba(0, 0, 0, 0.2);
     width: 233px;
     height: 27px;
-  }
+  }*/
   .span {
     color: #000;
   }
@@ -71,21 +87,7 @@
     max-height: 100%;
     cursor: pointer;
   }
-  .ashoka-mail-id {
-    top: 598px;
-    left: 55px;
-    height: 0px;
-    width: 0px;
-  }
-  .ashoka-mail-id input[type="text"] {
-    color: black;
-    background-color: #d9d9d9;
-    border: none;
-    outline: none;
-    width: 300px;
-    height: 30px;
-    font-size: 15px;
-  }
+
   .home-inner,
   .home-item {
     position: absolute;
