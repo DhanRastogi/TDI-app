@@ -6,9 +6,9 @@
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
-            {{ form.ashoka_email.label }}<br>
-            {{ form.ashoka_email(size=40) }}
-            {% for error in form.ashoka_email.errors %}
+            {{ form.ashoka_id.label }}<br>
+            {{ form.ashoka_id(size=40) }}
+            {% for error in form.ashoka_id.errors %}
             <span style="color: rgba(210, 48, 48, 0.801);">[{{ error }}]</span>
             {%endfor%}
         </p>
@@ -20,8 +20,9 @@
             {%endfor%}
         </p>
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        New to TDI? <input type="submit" value="Register Here" name="login_action"/>
         <p>{{ form.submit() }}</p>
+        New to TDI? <input type="submit" value="Register Here" name="login_action"/>
+        
        
     </form>
 {% endblock %}
