@@ -1,0 +1,209 @@
+.rectangle-div {
+    position: absolute;
+    top: 306px;
+    left: 45px;
+    border-radius: 10px;
+    background-color: rgba(176, 31, 46, 0.85);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 340px;
+    height: 98px;
+    opacity: 0.6;
+  }
+  .meal-booking {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 337px;
+    left: 113px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Inter;
+    color: #fff;
+    text-align: left;
+    display: inline-block;
+    opacity: 0.6;
+  }
+  .home-child1,
+  .home-child2 {
+    position: absolute;
+    top: 573px;
+    left: 45px;
+    border-radius: 10px;
+    background-color: rgba(176, 31, 46, 0.85);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 340px;
+    height: 98px;
+    opacity: 0.6;
+  }
+  .home-child2 {
+    top: 706px;
+    background-color: rgba(7, 45, 84, 0.85);
+  }
+  .manage-requests {
+    top: 737px;
+    left: 83px;
+  }
+  .home-child3,
+  .maintenance-request,
+  .manage-requests {
+    position: absolute;
+    opacity: 0.6;
+  }
+  .maintenance-request {
+    top: 604px;
+    left: 55px;
+  }
+  .home-child3 {
+    top: 440px;
+    left: 45px;
+    border-radius: 15px;
+    background-color: rgba(176, 31, 46, 0.85);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 340px;
+    height: 98px;
+  }
+  .home-child4,
+  .housekeeping {
+    position: absolute;
+    opacity: 0.6;
+  }
+  .housekeeping {
+    top: 471px;
+    left: 113px;
+  }
+  .home-child4 {
+    top: 0;
+    left: 0;
+    background-color: rgba(7, 45, 84, 0.9);
+    width: 414px;
+    height: 260px;
+  }
+  .vector-icon,
+  .welcome-back-robot {
+    position: absolute;
+    opacity: 0.6;
+  }
+  .welcome-back-robot {
+    top: 208px;
+    left: 14px;
+  }
+  .vector-icon {
+    height: 14.81%;
+    width: 40.7%;
+    top: 6.58%;
+    right: 29.59%;
+    bottom: 78.61%;
+    left: 29.71%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .home-child5,
+  .home-child6 {
+    position: absolute;
+    top: 0;
+    height: 896px;
+  }
+  .home-child5 {
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 252px;
+  }
+  .home-child6 {
+    left: 252px;
+    background-color: #d9d9d9;
+    width: 162px;
+    opacity: 0.01;
+    cursor: pointer;
+  }
+  .home-child7 {
+    position: absolute;
+    top: 570px;
+    left: 7px;
+    background-color: rgba(176, 31, 46, 0.85);
+    width: 116px;
+    height: 34px;
+    opacity: 0.85;
+  }
+  .sign-out {
+    position: absolute;
+    top: 573px;
+    left: 14px;
+    font-size: 24px;
+  }
+  .home-child10,
+  .home-child8,
+  .home-child9,
+  .rectangle-button {
+    position: absolute;
+    left: 7px;
+    background-color: rgba(7, 45, 84, 0.85);
+    height: 34px;
+    opacity: 0.85;
+  }
+  .rectangle-button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    top: 503px;
+    width: 111px;
+  }
+  .home-child8 {
+    top: 439px;
+    width: 202px;
+  }
+  .home-child9 {
+    top: 372px;
+    width: 214px;
+  }
+  .home-child10 {
+    top: 303px;
+    width: 90px;
+  }
+  .settings {
+    border: 0;
+    font-family: Inter;
+    font-size: 24px;
+    background-color: transparent;
+    position: absolute;
+    top: 471px;
+    left: 15px;
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+  }
+  .profile,
+  .shuttle-schedule,
+  .useful-contacts {
+    position: absolute;
+    left: 14px;
+    font-size: 24px;
+  }
+  .shuttle-schedule {
+    top: 375px;
+  }
+  .useful-contacts {
+    top: 442px;
+  }
+  .profile {
+    top: 306px;
+  }
+  .home1 {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 896px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 30px;
+    color: #fff;
+    font-family: Inter;
+  }

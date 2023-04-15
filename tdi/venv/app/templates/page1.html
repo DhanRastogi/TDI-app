@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="../static/Home.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="home1">
+      <div class="rectangle-div"></div>
+      <button class="meal-booking">Meal Booking</button>
+      <div class="home-child1"></div>
+      <div class="home-child2"></div>
+      <b class="manage-requests">Manage Requests</b
+      ><b class="maintenance-request">Maintenance Request</b>
+      <div class="home-child3"></div>
+      <b class="housekeeping">Housekeeping</b>
+      <div class="home-child4"></div>
+      <b class="welcome-back-robot">Welcome Back Robot User</b
+      ><img class="vector-icon" alt="" src="../static/vector.svg" />
+      <div class="home-child5"></div>
+      <div class="home-child6" id="rectangle6"></div>
+      <div class="home-child7"></div>
+      <b class="sign-out">Sign Out</b><button class="rectangle-button"></button>
+      <div class="home-child8"></div>
+      <div class="home-child9"></div>
+      <div class="home-child10"></div>
+      <input class="settings" type="text" /><b class="shuttle-schedule"
+        >Shuttle Schedule</b
+      ><b class="useful-contacts">Useful Contacts</b
+      ><b class="profile">Profile</b>
+    </div>
+
+    <script>
+      var rectangle6 = document.getElementById("rectangle6");
+      if (rectangle6) {
+        rectangle6.addEventListener("click", function (e) {
+          window.location.href = "./page2.html";
+        });
+      }
+      </script>
+  </body>
+</html>

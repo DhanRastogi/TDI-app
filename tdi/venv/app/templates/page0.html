@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="home">
+      <div class="off-campus-residence-container">
+        <p class="off-campus-residence">Off Campus Residence</p>
+        <p class="tdi-lake-grove">
+          <span
+            ><span class="tdi">TDI </span
+            ><i class="lake-grove">Lake Grove</i></span
+          >
+        </p>
+      </div>
+      <b class="sign-in">SIGN IN</b
+      ><img class="home-child" alt="" src="../static/rectangle-46.svg" /><b
+        class="ashoka-mail-id"
+        >ashoka mail id</b
+      ><b class="new-to-tdi-container"
+        ><span>New to TDI?</span><span class="span"> </span
+        ><span class="sign-up">Sign up</span></b
+      ><img class="group-icon" alt="" src="../static/group.svg" id="groupIcon" />
+      <div class="home-item"></div>
+      <div class="home-inner"></div>
+      <img class="group-icon1" alt="" src="../static/group1.svg" />
+      <div class="login-with-google">LOGIN WITH GOOGLE</div>
+      <div class="image-6-parent">
+        <img class="image-6-icon" alt="" src="../static/image-6@2x.png" /><img
+          class="image-7-icon"
+          alt=""
+          src="../static/image-7@2x.png"
+        />
+      </div>
+    </div>
+
+    <script>
+      var groupIcon = document.getElementById("groupIcon");
+      if (groupIcon) {
+        groupIcon.addEventListener("click", function (e) {
+          window.location.href = "./page2.html";
+        });
+      }
+      </script>
+  </body>
+</html>

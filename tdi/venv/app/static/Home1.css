@@ -1,0 +1,118 @@
+.home-child11 {
+    position: absolute;
+    top: 306px;
+    left: 45px;
+    border-radius: 10px;
+    background-color: rgba(176, 31, 46, 0.85);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 340px;
+    height: 98px;
+    cursor: pointer;
+  }
+  .meal-booking1 {
+    position: absolute;
+    top: 337px;
+    left: 113px;
+  }
+  .home-child12,
+  .home-child13 {
+    position: absolute;
+    top: 573px;
+    left: 45px;
+    border-radius: 10px;
+    background-color: rgba(176, 31, 46, 0.85);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 340px;
+    height: 98px;
+    cursor: pointer;
+  }
+  .home-child13 {
+    top: 706px;
+    background-color: rgba(7, 45, 84, 0.85);
+    opacity: 0.85;
+  }
+  .manage-requests1 {
+    position: absolute;
+    top: 737px;
+    left: 83px;
+  }
+  .home-child14 {
+    position: absolute;
+  }
+  .maintenance-request1 {
+    position: absolute;
+    top: 604px;
+    left: 55px;
+  }
+  .home-child14 {
+    top: 440px;
+    left: 45px;
+    border-radius: 15px;
+    background-color: rgba(176, 31, 46, 0.85);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 340px;
+    height: 98px;
+    cursor: pointer;
+  }
+  .home-child15,
+  .housekeeping1 {
+    position: absolute;
+  }
+  .housekeeping1 {
+    top: 471px;
+    left: 113px;
+  }
+  .home-child15 {
+    top: 0;
+    left: 0;
+    background-color: rgba(7, 45, 84, 0.9);
+    width: 414px;
+    height: 260px;
+    opacity: 0.85;
+  }
+  .welcome-back-robot1 {
+    position: absolute;
+    top: 208px;
+    left: 14px;
+  }
+  .group-icon2,
+  .vector-icon1 {
+    position: absolute;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .vector-icon1 {
+    height: 14.81%;
+    width: 40.7%;
+    top: 6.58%;
+    right: 29.59%;
+    bottom: 78.61%;
+    left: 29.71%;
+  }
+  .group-icon2 {
+    height: 3.13%;
+    width: 9.66%;
+    top: 1.61%;
+    right: 88.01%;
+    bottom: 95.27%;
+    left: 2.33%;
+    cursor: pointer;
+  }
+  .home2 {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 896px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 30px;
+    color: #fff;
+    font-family: Inter;
+  }

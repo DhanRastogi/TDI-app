@@ -1,0 +1,156 @@
+.off-campus-residence1 {
+    margin: 0;
+    font-weight: 500;
+  }
+  .tdi1 {
+    font-family: Inter;
+  }
+  .lake-grove1,
+  .tdi1 {
+    font-weight: 600;
+  }
+  .tdi-lake-grove1 {
+    margin: 0;
+    font-size: 32px;
+  }
+  .off-campus-residence-container1,
+  .sign-in1 {
+    position: absolute;
+    top: 462px;
+    left: 57px;
+    display: inline-block;
+    width: 293px;
+    height: 71px;
+  }
+  .sign-in1 {
+    top: 588px;
+    left: -1px;
+    font-size: 30px;
+    width: 205px;
+    height: 40px;
+  }
+  .rectangle-input {
+    border: 0;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 640px;
+    left: 43px;
+    border-radius: 10px;
+    width: 330px;
+    height: 37px;
+  }
+  .ashoka-mail-id1 {
+    position: absolute;
+    top: 645px;
+    left: 10px;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.2);
+    width: 233px;
+    height: 27px;
+  }
+  .span1 {
+    color: #000;
+  }
+  .sign-up1 {
+    color: #b01f2e;
+  }
+  .new-to-tdi-container1 {
+    position: absolute;
+    top: 692px;
+    left: -6px;
+    font-size: 16px;
+    display: inline-block;
+    width: 261px;
+    height: 26px;
+    color: #072d54;
+  }
+  .group-icon3 {
+    position: absolute;
+    height: 5.38%;
+    width: 11.65%;
+    top: 64.73%;
+    right: 9.85%;
+    bottom: 29.88%;
+    left: 78.5%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    cursor: pointer;
+  }
+  .home-child16,
+  .home-child17 {
+    position: absolute;
+    top: 751px;
+    left: 40px;
+    background-color: rgba(7, 45, 84, 0.85);
+    height: 57px;
+  }
+  .home-child16 {
+    border: 0;
+    border-radius: 10px;
+    width: 328px;
+  }
+  .home-child17 {
+    border-radius: 10px 0 0 10px;
+    width: 55px;
+  }
+  .vector-icon2 {
+    position: absolute;
+    height: 3.57%;
+    width: 7.1%;
+    top: 85.49%;
+    right: 80.09%;
+    bottom: 10.94%;
+    left: 12.8%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .login-with-google1 {
+    position: absolute;
+    top: 769px;
+    left: 122px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    display: inline-block;
+    width: 208px;
+    height: 23px;
+  }
+  .image-6-icon1,
+  .image-7-icon1 {
+    position: relative;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .image-7-icon1 {
+    width: 315px;
+    height: 285px;
+  }
+  .image-6-icon1 {
+    width: 215px;
+    height: 65px;
+  }
+  .image-7-parent {
+    position: absolute;
+    top: 42px;
+    left: 49px;
+    width: 315px;
+    height: 385px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+  }
+  .home3 {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 896px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 20px;
+    color: rgba(7, 45, 84, 0.85);
+    font-family: Inter;
+  }
