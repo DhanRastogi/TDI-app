@@ -21,7 +21,7 @@ class UserDetailsForm(FlaskForm):
     name=StringField('Name', validators=[DataRequired()])
     ashoka_email=StringField('Ashoka Email', validators=[DataRequired(), Email()])    
     flat=IntegerField('Flat Number', validators=[DataRequired()])
-    #floor=SelectField('Floor', choices=[('GF','GF'),('FF','FF'),('SF','SF'),('TF','TF'),('Duplex','Duplex')],validators=[DataRequired()])
+    #floor=SelectField('Floor', choices=[('GF','Ground Floor'),('FF','First Floor'),('SF','Second Floor'),('TF','Third Floor'),('Duplex','Duplex')],validators=[DataRequired()])
     room=IntegerField('Room Number', validators=[DataRequired()])
     submit=SubmitField('Continue')  
 

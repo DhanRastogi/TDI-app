@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, request, session
+from flask import render_template, flash, redirect, request, session, url_for
 from app import app, db
 from app.forms import LogInForm, RegistrationForm, UserDetailsForm, MealForm, EditProfileForm
 from app.models import User, Housekeeping, Maintenance, Requests
@@ -10,34 +10,33 @@ from werkzeug.urls import url_parse
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect('/home')
+        return redirect(url_for('home'))
     form=LogInForm()
     if request.form.get('login_action') == 'Register Here':
-               return redirect('/register')
+               return redirect(url_for('register'))
     
     if form.validate_on_submit():
         user = User.query.filter_by(ashoka_id=form.ashoka_id.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            return redirect('/login')
+            return redirect(url_for('login'))
         
         login_user(user, remember=form.remember_me.data)
-        return redirect('/home')
+        return redirect(url_for('home'))
     return render_template('login.html', title='Sign In', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect('/home')
+        return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(ashoka_id=form.ashoka_id.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Please Login to Continue')
-        return redirect('/login')
+        return redirect(url_for('login'))
     return render_template('registration.html', title='Register', form=form)
 
 
@@ -52,7 +51,7 @@ def user_details():
           current_user.flat=str(form.flat.data) + " " + str(request.form.get('floor'))
           current_user.room=form.room.data
           db.session.commit()
-          return redirect('/login')
+          return redirect(url_for('login'))
      elif request.method=='GET':
           return render_template('user_details.html', title='Register', form=form)
      
@@ -85,7 +84,7 @@ def edit_profile():
         current_user.flat=str(form.flat.data) + " " + str(request.form.get('floor'))
         db.session.commit()
         flash('Your profile has been updated')
-        return redirect('/edit_profile')
+        return redirect(url_for('edit_profile'))
     
     #elif request.method=='GET':
     else:
@@ -101,23 +100,23 @@ def edit_profile():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect('/login')
+    return redirect(url_for('login'))
 
 
 @app.route('/home', methods=['GET', 'POST'])
 @login_required
 def home():
         if current_user.name == None:
-             return redirect('/user_details')
+             return redirect(url_for('user_details'))
         elif request.method == 'POST':
             if request.form.get('home_action') == 'Meal Booking':
-               return redirect('/mealbooking')
+               return redirect(url_for('mealbooking'))
             if request.form.get('home_action') == 'Housekeeping':
-               return redirect('/housekeeping')
+               return redirect(url_for('housekeeping'))
             if request.form.get('home_action') == 'Maintenance Requests':
-               return redirect('/maintenance_request')
+               return redirect(url_for('maintenance_request'))
             if request.form.get('home_action') == 'Manage Requests':
-               return redirect('/manage_requests')      
+               return redirect(url_for('manage_requests'))
         elif request.method == 'GET':
             return render_template('home.html', title='Home')        
         
@@ -126,7 +125,7 @@ def home():
 def mealbooking():
         form=MealForm()
         if form.validate_on_submit():
-            return redirect('/mealbooking_success')
+            return redirect(url_for('mealbooking_success'))
         return render_template('mealbooking.html', title='Meal Booking', form=form)
       
 @app.route('/mealbooking_success', methods=['GET', 'POST'])
@@ -134,9 +133,9 @@ def mealbooking():
 def mealbooking_success():
         if request.method == 'POST':
             if request.form.get('meal_success_action') == 'Book More':
-               return redirect('/mealbooking')
+               return redirect(url_for('mealbooking'))
             elif request.form.get('meal_success_action') == 'Home':
-                return redirect('/home')
+                return redirect(url_for('home'))
         elif request.method == 'GET':
             return render_template('mealbooking_success.html')        
      
@@ -145,12 +144,12 @@ def mealbooking_success():
 def housekeeping():
          if request.method == 'POST':
             if request.form.get('housekeeping_action') == 'Submit':
-                db.session.add(Housekeeping(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, time_slot=request.form.get('time_slot'), body=request.form.get('remarks')))
-                db.session.add(Requests(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, time_slot=request.form.get('time_slot'), body=request.form.get('remarks'), type='Housekeeping'))
+                db.session.add(Housekeeping(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, date=datetime.now().strftime('%d-%m-%Y'), time=datetime.now().strftime('%H:%M'), time_slot=request.form.get('time_slot'), body=request.form.get('remarks')))
+                db.session.add(Requests(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, date=datetime.now().strftime('%d-%m-%Y'), time=datetime.now().strftime('%H:%M'), time_slot=request.form.get('time_slot'), body=request.form.get('remarks'), type='Housekeeping'))
                 db.session.commit()
-                return redirect('/housekeeping_success')
+                return redirect(url_for('housekeeping_success'))
             elif request.form.get('housekeeping_action') == 'Cancel':
-                return redirect('/home')
+                return redirect(url_for('home'))
          elif request.method == 'GET':
             return render_template('housekeeping.html')
          
@@ -159,7 +158,7 @@ def housekeeping():
 def housekeeping_success():
         if request.method == 'POST':
             if request.form.get('housekeeping_success_action') == 'Home':
-                return redirect('/home')
+                return redirect(url_for('home'))
         elif request.method == 'GET':
             return render_template('housekeeping_success.html')       
 
@@ -168,26 +167,59 @@ def housekeeping_success():
 def maintenance_request():
          if request.method == 'POST':
             if request.form.get('maintenance_action') == 'Submit':
-                db.session.add(Maintenance(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, body=request.form.get('request')))
-                db.session.add(Requests(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, body=request.form.get('request'), type='Maintenance'))
+                db.session.add(Maintenance(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, date=datetime.now().strftime('%d-%m-%Y'), time=datetime.now().strftime('%H:%M'), body=request.form.get('request')))
+                db.session.add(Requests(name=current_user.name, ashoka_id=current_user.ashoka_id, flat=current_user.flat, room=current_user.room, date=datetime.now().strftime('%d-%m-%Y'), time=datetime.now().strftime('%H:%M'), body=request.form.get('request'), type='Maintenance'))
                 db.session.commit()
-                return redirect('/maintenance_request_success')
+                return redirect(url_for('maintenance_request_success'))
             elif request.form.get('maintenance_action') == 'Cancel':
-                return redirect('/home')
+                return redirect(url_for('home'))
          elif request.method == 'GET':
             return render_template('maintenance_request.html')
                
 @app.route('/maintenance_request_success', methods=['GET', 'POST'])
 @login_required
-def maintenance_success():
+def maintenance_request_success():
         if request.method == 'POST':
             if request.form.get('maintenance_success_action') == 'Home':
-                return redirect('/home')
+                return redirect(url_for('home'))
         elif request.method == 'GET':
             return render_template('maintenance_request_success.html') 
         
 @app.route('/manage_requests', methods=['GET', 'POST'])
 @login_required      
 def manage_requests():
-         print(Requests.query.filter_by(ashoka_id=current_user.ashoka_id).all())
-         return
+         if request.method == 'POST':
+              req=Requests.query.filter_by(id=request.form.get('manage_req_action')).first().type
+              if req == 'Housekeeping':
+                   return redirect(url_for('housekeeping_edit', req_edit=Requests.query.filter_by(id=request.form.get('manage_req_action')).first().id))
+              elif req == 'Maintenance':
+                   return redirect(url_for('maintenance_edit'))
+              
+         elif request.method == 'GET':
+             requests=Requests.query.filter_by(ashoka_id=current_user.ashoka_id).all()
+             requests.reverse()
+             #requests=current_user.all_requests.all()[0]
+             return render_template('manage_requests_table.html', requests=requests)
+         
+
+@app.route('/housekeeping_edit/<req_edit>', methods=['GET', 'POST'])
+@login_required
+def housekeeping_edit(req_edit):
+        edit_request=Requests.query.filter_by(id=req_edit).first()
+        time=edit_request.time_slot
+        text_body=edit_request.body
+        print(text_body)
+        if request.method == 'POST':
+            if request.form.get('housekeeping_edit_action') == 'Modify':              
+                edit_request.body = request.form.get('remarks')
+                edit_request.time_slot = request.form.get('time_slot')
+                db.session.commit()
+                return redirect(url_for('manage_requests'))
+            
+           # elif request.form.get('housekeeping_action') == 'Cancel':
+            else:            
+                 return redirect(url_for('manage_requests'))    
+
+        elif request.method == 'GET':
+            return render_template('housekeeping_edit.html', time=time, text_body=text_body)
+            

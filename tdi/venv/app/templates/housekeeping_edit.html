@@ -2,8 +2,9 @@
 
 {% block content %}
 <form method="post">
-    <label for="slots">Choose a slot</label>
+    <label for="time_slot">Choose a slot</label>
     <select name="time_slot">
+      <option selected value="{{ time }}">{{ time }}</option>  
       <option value="9am - 10am">9 am - 10 am</option>
       <option value="10am - 11am">10 am - 11 am</option>
       <option value="11am - 12pm">11 am - 12 pm</option>
@@ -14,12 +15,12 @@
     </select>
 
     <p>
-      <label for="remarks">Remarks</label>
-      <input type="textarea" name="remarks" rows="5" cols="40">
+      <label for="remarks">Remarks</label><br>
+      <textarea name="remarks">{{ text_body }}</textarea>
     </p>
 
     <br><br>
-    <input type="submit" value="Cancel" name="housekeeping_action">
-    <input type="submit" value="Submit" name="housekeeping_action">
+    <input type="submit" value="Cancel" name="housekeeping_edit_action">
+    <input type="submit" value="Modify" name="housekeeping_edit_action">
 </form>    
 {% endblock %}

@@ -36,8 +36,8 @@ class Housekeeping(UserMixin, db.Model):
     flat=db.Column(db.String, nullable=True, index=True)
     room=db.Column(db.Integer, nullable=True, index=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
-    date=db.Column(db.String, index=True, default=datetime.now().strftime('%d-%m-%Y'))
-    time=db.Column(db.String, index=True, default=datetime.now().strftime('%H:%M'))   
+    date=db.Column(db.String, index=True)
+    time=db.Column(db.String, index=True)   
     time_slot = db.Column(db.String, nullable=True)
     body = db.Column(db.String, nullable=True)
         
@@ -52,8 +52,8 @@ class Maintenance(UserMixin, db.Model):
     flat=db.Column(db.String, nullable=True, index=True)
     room=db.Column(db.Integer, nullable=True, index=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
-    time=db.Column(db.String, index=True, default=datetime.now().strftime('%H:%M'))
-    date=db.Column(db.String, index=True, default=datetime.now().strftime('%d-%m-%Y'))
+    time=db.Column(db.String, index=True)
+    date=db.Column(db.String, index=True)
     body = db.Column(db.String, nullable=True)
 
     def __repr__(self):
@@ -67,8 +67,8 @@ class Requests(UserMixin, db.Model):
     flat=db.Column(db.String, nullable=True, index=True)
     room=db.Column(db.Integer, nullable=True, index=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
-    date=db.Column(db.String, index=True, default=datetime.now().strftime('%d-%m-%Y'))
-    time=db.Column(db.String, index=True, default=datetime.now().strftime('%H:%M'))
+    date=db.Column(db.String, index=True)
+    time=db.Column(db.String, index=True)
     type=db.Column(db.String, nullable=True, index=True)
     status=db.Column(db.String, nullable=True, index=True, default='Pending')
     time_slot = db.Column(db.String, nullable=True)
