@@ -20,18 +20,29 @@
           >
         </p>
       </div>
-      <b class="sign-in">SIGN IN</b
-      ><img class="home-child" alt="" src="../static/rectangle-46.svg" /><b
-        class="ashoka-mail-id"
-        >ashoka mail id</b
-      ><b class="new-to-tdi-container"
-        ><span>New to TDI?</span><span class="span"> </span
-        ><span class="sign-up">Sign up</span></b
-      ><img class="group-icon" alt="" src="../static/group.svg" id="groupIcon" />
+      <b class="sign-in">SIGN IN</b>
+      <img class="home-child" alt="" src="../static/rectangle-46.svg" />
+      <form action="" method="post" class="ashoka-mail-id" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            <br>
+            {{ form.ashoka_id(size=40, placeholder="Ashoka Email ID") }}
+            {% for error in form.ashoka_id.errors %}
+            <span style="color: rgba(210, 48, 48, 0.801);">[{{ error }}]</span>
+            {%endfor%}
+        </p></form>
+      <b class="new-to-tdi-container">
+        <span>New to TDI?</span><span class="span"> </span>
+        <span class="sign-up" id="signUp">Sign up</span></b>
+        <!--<img class="group-icon" alt="" src="../static/group.svg" id="groupIcon" />-->
+        <button type="submit">
+          <img class="group-icon" alt="" src="../static/group.svg" id="groupIcon" />
+        </button>
+        
       <div class="home-item"></div>
       <div class="home-inner"></div>
       <img class="group-icon1" alt="" src="../static/group1.svg" />
-      <div class="login-with-google">LOGIN WITH GOOGLE</div>
+      <div class="login-with-google" id="loginButton">LOGIN WITH GOOGLE</div>
       <div class="image-6-parent">
         <img class="image-6-icon" alt="" src="../static/image-6@2x.png" /><img
           class="image-7-icon"
@@ -45,7 +56,25 @@
       var groupIcon = document.getElementById("groupIcon");
       if (groupIcon) {
         groupIcon.addEventListener("click", function (e) {
+          window.location.href = "./page3.html";
+        });
+      }
+      </script>
+
+    <script>
+      var signUp = document.getElementById("signUp");
+      if (signUp) {
+        signUp.addEventListener("click", function (e) {
           window.location.href = "./page2.html";
+        });
+      }
+      </script>
+
+    <script>
+      var loginButton = document.getElementById("loginButton");
+      if (loginButton) {
+        loginButton.addEventListener("click", function (e) {
+          window.location.href = "./page0.html";
         });
       }
       </script>
