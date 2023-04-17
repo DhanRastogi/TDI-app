@@ -196,12 +196,8 @@ def manage_requests():
 def goodboii():
     return render_template('TDILogin.html')
 
-@app.route('/page0')
+@app.route('/page0', methods=['GET', 'POST'])
 def page0():
-    return render_template('page0.html')
-
-@app.route('/page01', methods=['GET', 'POST'])
-def page01():
   
     form=LogInForm()
     
@@ -213,7 +209,7 @@ def page01():
         
         login_user(user, remember=form.remember_me.data)
         return redirect('/home')
-    return render_template('page01.html', title='Sign In', form=form)
+    return render_template('page0.html', title='Sign In', form=form)
 
 @app.route('/page1')
 def page1():
