@@ -1,0 +1,30 @@
+
+{% extends "base_table.html" %}
+
+{% block content %}
+  <table id="manage_requests" class="table table-striped">
+    <form method="post">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for request in requests %}
+        <tr>
+          <td>{{ request.type }}</td>
+          <td>{{ request.date }}</td>
+          <td>{{ request.time }}</td>
+          <td>{{ request.status }}</td>
+          <td> <label for="manage_req_action">Edit</label>
+               <input type="submit" value={{ request.id }} name="manage_req_action"/> </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </form>
+  </table>
+{% endblock %}
