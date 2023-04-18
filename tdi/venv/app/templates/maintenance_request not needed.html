@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post">
+    <p>
+      <label for="request">Enter your maintenance request here</label>
+      <input type="textarea" name="request" rows="5" cols="40">
+    </p>
+
+    <br><br>
+    <input type="submit" value="Cancel" name="maintenance_action">
+    <input type="submit" value="Submit" name="maintenance_action">
+</form>    
+{% endblock %}

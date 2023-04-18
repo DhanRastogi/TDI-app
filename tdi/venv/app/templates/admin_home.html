@@ -1,0 +1,60 @@
+
+{% extends "admin_base_table.html" %}
+
+{% block content %}
+<h3>Housekeeping</h3>
+  <table id="admin_housekeeping" class="table table-striped">
+    <form method="post">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Flat</th>
+        <th>Body</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for request in hk_requests %}
+        <tr>
+          <td>{{ request.date }}</td>
+          <td>{{ request.time }}</td>
+          <td>{{ request.flat }}</td>
+          <td>{{ request.body }}</td>
+          <td> <label for="admin_hk_action"></label>
+               <input type="button" value="Close {{ request.id }}" name="admin_hk_action"/> </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </form>
+  </table>
+
+<br>
+
+  <h3>Maintenance</h3>
+  <table id="admin_maintenance" class="table table-striped">
+    <form method="post">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Flat</th>
+        <th>Body</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for request in main_requests %}
+        <tr>
+          <td>{{ request.date }}</td>
+          <td>{{ request.time }}</td>
+          <td>{{ request.flat }}</td>
+          <td>{{ request.body }}</td>
+          <td> <label for="admin_main_action">Close</label>
+               <input type="submit" value="{{ request.id }}" name="admin_main_action"/> </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </form>
+  </table>
+{% endblock %}

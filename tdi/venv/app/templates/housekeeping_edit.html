@@ -1,26 +1,13 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
-<form method="post">
-    <label for="time_slot">Choose a slot</label>
-    <select name="time_slot">
-      <option selected value="{{ time }}">{{ time }}</option>  
-      <option value="9am - 10am">9 am - 10 am</option>
-      <option value="10am - 11am">10 am - 11 am</option>
-      <option value="11am - 12pm">11 am - 12 pm</option>
-      <option value="12pm - 1pm">12 pm - 1 pm</option>
-      <option value="2pm - 3pm">2 pm - 3 pm</option>
-      <option value="3pm - 4pm">3 pm - 4 pm</option>
-      <option value="4pm - 5pm">4 pm - 5 pm</option>
-    </select>
+{% block app_content %}
 
-    <p>
-      <label for="remarks">Remarks</label><br>
-      <textarea name="remarks">{{ text_body }}</textarea>
-    </p>
+<h1>Edit Your Housekeeping Request</h1>
+<div class="row">
+    <div class="col-md-4">
+        {{ wtf.quick_form(form) }}
+    </div>
+</div>
 
-    <br><br>
-    <input type="submit" value="Cancel" name="housekeeping_edit_action">
-    <input type="submit" value="Modify" name="housekeeping_edit_action">
-</form>    
 {% endblock %}
