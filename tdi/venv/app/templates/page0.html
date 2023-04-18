@@ -31,18 +31,26 @@
             <span style="color: rgba(210, 48, 48, 0.801);">[{{ error }}]</span>
             {%endfor%}
         </p>
-        <button type="submit">
-          <img class="group-icon" alt="" src="../static/group.svg" id="groupIcon" />
-        </button>
+        <p>
+          {{ form.password.label }}<br>
+          {{ form.password(size=40, placeholder="password") }}
+          {% for error in form.password.errors %}
+          <span style="color: rgba(210, 48, 48, 0.801);">[{{ error }}]</span>
+          {%endfor%}
+        </p>
+        
       </form>
         <b class="new-to-tdi-container">
         <span>New to TDI?</span><span class="span"> </span>
         <span class="sign-up" id="signUp">Sign up</span></b>
         <!--<img class="group-icon" alt="" src="../static/group.svg" id="groupIcon" />-->
         
-        
+      <button type="submit">
+        <img class="group-icon" alt="" src="../static/group.svg" id="groupIcon" />
+      </button>  
       <div class="home-item"></div>
       <div class="home-inner"></div>
+      
       <img class="group-icon1" alt="" src="../static/group1.svg" />
       <div class="login-with-google" id="loginButton">LOGIN WITH GOOGLE</div>
       <div class="image-6-parent">
@@ -58,7 +66,7 @@
       var groupIcon = document.getElementById("groupIcon");
       if (groupIcon) {
         groupIcon.addEventListener("click", function (e) {
-          window.location.href = "./page3.html";
+          window.location.href = "./page3";
         });
       }
       </script>
@@ -67,7 +75,7 @@
       var signUp = document.getElementById("signUp");
       if (signUp) {
         signUp.addEventListener("click", function (e) {
-          window.location.href = "./page2.html";
+          window.location.href = "./page2";
         });
       }
       </script>
@@ -76,7 +84,7 @@
       var loginButton = document.getElementById("loginButton");
       if (loginButton) {
         loginButton.addEventListener("click", function (e) {
-          window.location.href = "./page0.html";
+          window.location.href = "./page0";
         });
       }
       </script>

@@ -17,14 +17,14 @@
   .off-campus-residence-container,
   .sign-in {
     position: absolute;
-    top: 462px;
+    top: 450px;
     left: 57px;
     display: inline-block;
     width: 293px;
     height: 71px;
   }
   .sign-in {
-    top: 588px;
+    top: 545px;
     left: -1px;
     font-size: 30px;
     width: 205px;
@@ -32,7 +32,7 @@
   }
   .home-child {
     position: absolute;
-    top: 640px;
+    top: 600px;
     left: 43px;
     border-radius: 10px;
     width: 330px;
@@ -40,13 +40,23 @@
   }
   .ashoka-mail-id {
     position:absolute;
-    top: 598px;
+    top: 558px;
     left: 51px;
     height: 0px;
     width: 0px;
   }
 
   .ashoka-mail-id input[type="number"] {
+    color: black;
+    background-color: #d9d9d9;
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .ashoka-mail-id input[type="password"] {
     color: black;
     background-color: #d9d9d9;
     border: none;
@@ -82,7 +92,7 @@
   }
   .group-icon {
     position: absolute;
-    top: 64.73%;
+    top: 59.73%;
     left: 315px;
     max-width: 100%;
     overflow: hidden;
